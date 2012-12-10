@@ -1,0 +1,20 @@
+var NAVTREEINDEX0 =
+{
+"annotated.html":[0,0],
+"classclassifier.html":[0,0,0],
+"classclassifier.html#a092c3b4180812ff7bdbc11798a7887d3":[0,0,0,2],
+"classclassifier.html#a095c5d389db211932136b53f25f39685":[0,0,0,0],
+"classclassifier.html#a351f2feccb24c826e109b3941ec0d104":[0,0,0,4],
+"classclassifier.html#aba60528cc6adba7f958fd66c10bdf283":[0,0,0,3],
+"classclassifier.html#add31b9953bb0eeba6eb0e3ecbc86e1ab":[0,0,0,1],
+"classdatapoint.html":[0,0,1],
+"classdatapoint.html#a252ba022809910ea710a068fc1bab657":[0,0,1,1],
+"classdatapoint.html#a77b973d137fb33212e018b042df6e3e7":[0,0,1,3],
+"classdatapoint.html#aeee73315d753c33c63ae7abb87a375a4":[0,0,1,0],
+"classdatapoint.html#af3a16c5f0dd7a74cf9acf6a49fff73a7":[0,0,1,2],
+"classes.html":[0,1],
+"functions.html":[0,2,0],
+"functions_func.html":[0,2,1],
+"index.html":[],
+"pages.html":[]
+};
