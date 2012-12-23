@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5f_5fconstruct',['__construct',['../classdatapoint.html#aeee73315d753c33c63ae7abb87a375a4',1,'datapoint']]]
+  ['_5f_5fconstruct',['__construct',['../classdatapoint.html#a6a43e9d2c004ce06f034ec525f494a8c',1,'datapoint']]]
 ];

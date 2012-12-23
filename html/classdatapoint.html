@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Knn Prototype
-   &#160;<span id="projectnumber">1.0b</span>
+   &#160;<span id="projectnumber">1.1b</span>
    </div>
    <div id="projectbrief">A php version of the Knn Prototype classifier</div>
   </td>
@@ -110,17 +110,14 @@ $(document).ready(function(){initNavTree('classdatapoint.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeee73315d753c33c63ae7abb87a375a4"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatapoint.html#aeee73315d753c33c63ae7abb87a375a4">__construct</a> ($x, $y, $class)</td></tr>
-<tr class="separator:aeee73315d753c33c63ae7abb87a375a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a43e9d2c004ce06f034ec525f494a8c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatapoint.html#a6a43e9d2c004ce06f034ec525f494a8c">__construct</a> ($class, $attributes)</td></tr>
+<tr class="separator:a6a43e9d2c004ce06f034ec525f494a8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Data Fields</h2></td></tr>
-<tr class="memitem:af3a16c5f0dd7a74cf9acf6a49fff73a7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af3a16c5f0dd7a74cf9acf6a49fff73a7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>$x</b></td></tr>
-<tr class="separator:af3a16c5f0dd7a74cf9acf6a49fff73a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a77b973d137fb33212e018b042df6e3e7"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a77b973d137fb33212e018b042df6e3e7"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>$y</b></td></tr>
-<tr class="separator:a77b973d137fb33212e018b042df6e3e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2db06b5d7ea39cc0e66d5485029c59aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2db06b5d7ea39cc0e66d5485029c59aa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$attributelist</b> = array()</td></tr>
+<tr class="separator:a2db06b5d7ea39cc0e66d5485029c59aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a252ba022809910ea710a068fc1bab657"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a252ba022809910ea710a068fc1bab657"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>$class</b></td></tr>
 <tr class="separator:a252ba022809910ea710a068fc1bab657"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,7 +129,7 @@ Data Fields</h2></td></tr>
 <p>Known issues: Only supports two attributes: x and y, multiple attributes can be added in the future.</p>
 <p>Class datapoint General datapoint class. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aeee73315d753c33c63ae7abb87a375a4"></a>
+<a class="anchor" id="a6a43e9d2c004ce06f034ec525f494a8c"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -140,19 +137,13 @@ Data Fields</h2></td></tr>
           <td class="memname">__construct </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$x</em>, </td>
+          <td class="paramname"><em>$class</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$class</em>&#160;</td>
+          <td class="paramname"><em>$attributes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -164,8 +155,7 @@ Data Fields</h2></td></tr>
 <p>Constructor for a new datapoint </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$x</td><td>The first attribute (x) for the datapoint. </td></tr>
-    <tr><td class="paramtype">int</td><td class="paramname">$y</td><td>The second attribute (x) for the datapoint. </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$attributes</td><td>The attributes of a datapoint. </td></tr>
     <tr><td class="paramtype">int</td><td class="paramname">$class</td><td>The class value for the datapoint. </td></tr>
   </table>
   </dd>
@@ -182,7 +172,7 @@ Data Fields</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classdatapoint.html">datapoint</a></li>
-    <li class="footer">Generated on Mon Dec 10 2012 12:20:15 for Knn Prototype by
+    <li class="footer">Generated on Sun Dec 23 2012 12:03:18 for Knn Prototype by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

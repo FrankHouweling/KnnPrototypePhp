@@ -28,7 +28,7 @@
  <tr style="height: 56px;">
   <td style="padding-left: 0.5em;">
    <div id="projectname">Knn Prototype
-   &#160;<span id="projectnumber">1.0b</span>
+   &#160;<span id="projectnumber">1.1b</span>
    </div>
    <div id="projectbrief">A php version of the Knn Prototype classifier</div>
   </td>
@@ -109,10 +109,14 @@ $(document).ready(function(){initNavTree('classclassifier.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:add31b9953bb0eeba6eb0e3ecbc86e1ab"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#add31b9953bb0eeba6eb0e3ecbc86e1ab">addPoint</a> ($x, $y, $class)</td></tr>
-<tr class="separator:add31b9953bb0eeba6eb0e3ecbc86e1ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a351f2feccb24c826e109b3941ec0d104"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a351f2feccb24c826e109b3941ec0d104">classify</a> ($x, $y)</td></tr>
-<tr class="separator:a351f2feccb24c826e109b3941ec0d104"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f111da4bc40db4532693fb7e943078d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a3f111da4bc40db4532693fb7e943078d">addPoint</a> ($class, $attributes)</td></tr>
+<tr class="separator:a3f111da4bc40db4532693fb7e943078d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aad38411bfb882cf9a47939506c087587"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#aad38411bfb882cf9a47939506c087587">classify</a> ($attributes, $measure=&quot;manhattan&quot;)</td></tr>
+<tr class="separator:aad38411bfb882cf9a47939506c087587"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a690d06ebe686a8f05540d54904c7cd35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a690d06ebe686a8f05540d54904c7cd35">manhattandistance</a> ($attributes)</td></tr>
+<tr class="separator:a690d06ebe686a8f05540d54904c7cd35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e9342fc9cb67666db29a8e4de170bde"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a5e9342fc9cb67666db29a8e4de170bde">euclidiandistance</a> ($attributes)</td></tr>
+<tr class="separator:a5e9342fc9cb67666db29a8e4de170bde"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aba60528cc6adba7f958fd66c10bdf283"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#aba60528cc6adba7f958fd66c10bdf283">calculatePrototype</a> ()</td></tr>
 <tr class="separator:aba60528cc6adba7f958fd66c10bdf283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092c3b4180812ff7bdbc11798a7887d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a092c3b4180812ff7bdbc11798a7887d3">array_avg</a> ($array)</td></tr>
@@ -121,7 +125,7 @@ Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class classifier A simple Knn prototype based classifier class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="add31b9953bb0eeba6eb0e3ecbc86e1ab"></a>
+<a class="anchor" id="a3f111da4bc40db4532693fb7e943078d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -129,19 +133,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">addPoint </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$x</em>, </td>
+          <td class="paramname"><em>$class</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$y</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$class</em>&#160;</td>
+          <td class="paramname"><em>$attributes</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -153,8 +151,7 @@ Public Member Functions</h2></td></tr>
 <p>Add a new point to the trainingdata </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$x</td><td>The first attribute (x) for the datapoint. </td></tr>
-    <tr><td class="paramtype">int</td><td class="paramname">$y</td><td>The second attribute (x) for the datapoint. </td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes for a datapoint. </td></tr>
     <tr><td class="paramtype">int</td><td class="paramname">$class</td><td>The class value for the datapoint. </td></tr>
   </table>
   </dd>
@@ -203,7 +200,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a351f2feccb24c826e109b3941ec0d104"></a>
+<a class="anchor" id="aad38411bfb882cf9a47939506c087587"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -211,13 +208,13 @@ Public Member Functions</h2></td></tr>
           <td class="memname">classify </td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$x</em>, </td>
+          <td class="paramname"><em>$attributes</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$y</em>&#160;</td>
+          <td class="paramname"><em>$measure</em> = <code>&quot;manhattan&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -229,12 +226,60 @@ Public Member Functions</h2></td></tr>
 <p>Classify a given datapoint </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramtype">int</td><td class="paramname">$x</td><td>The first attribute (x) for the to be classified datapoint. </td></tr>
-    <tr><td class="paramtype">int</td><td class="paramname">$y</td><td>The second attribute (x) for the to be classified datapoint.</td></tr>
+    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes for the to be classified datapoint. </td></tr>
+    <tr><td class="paramtype">string</td><td class="paramname">$measure</td><td>The to be used measure (manhattan or euclidian)</td></tr>
   </table>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>string Result class. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a5e9342fc9cb67666db29a8e4de170bde"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">euclidiandistance </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$attributes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the distance between a given datapoint and the last calculated prototypes using Euclidian Distance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes of the given datapoint.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array An array with the distances to the different classes. </dd></dl>
+
+</div>
+</div>
+<a class="anchor" id="a690d06ebe686a8f05540d54904c7cd35"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">manhattandistance </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$attributes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the distance between a given datapoint and the last calculated prototypes using Manhattan Distance.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes of the given datapoint.</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>array An array with the distances to the different classes. </dd></dl>
 
 </div>
 </div>
@@ -247,7 +292,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classclassifier.html">classifier</a></li>
-    <li class="footer">Generated on Mon Dec 10 2012 12:20:15 for Knn Prototype by
+    <li class="footer">Generated on Sun Dec 23 2012 12:03:18 for Knn Prototype by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
