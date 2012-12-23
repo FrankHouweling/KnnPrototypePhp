@@ -6,7 +6,7 @@
 	*	Knn Prototype
 	*	A simple, smart and fast classifier written in PHP.
 	*	@author Frank Houweling <houweling.frank@gmail.com>
-	*	@version 1.0b
+	*	@version 1.1b
 	*
 	*	Known issues:
 	*	Only supports two attributes: x and y, multiple attributes can be added in the future.
