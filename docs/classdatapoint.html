@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Knn Prototype: Data Fields - Functions</title>
+<title>Knn Prototype: datapoint Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,13 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
-      <li class="current"><a href="functions.html"><span>Data&#160;Fields</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li><a href="functions.html"><span>All</span></a></li>
-      <li class="current"><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -88,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('functions_func.html','');});
+$(document).ready(function(){initNavTree('classdatapoint.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -105,36 +99,69 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">datapoint Class Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-&#160;<ul>
-<li>__construct()
-: <a class="el" href="classdatapoint.html#a6a43e9d2c004ce06f034ec525f494a8c">datapoint</a>
-</li>
-<li>addPoint()
-: <a class="el" href="classclassifier.html#a3f111da4bc40db4532693fb7e943078d">classifier</a>
-</li>
-<li>array_avg()
-: <a class="el" href="classclassifier.html#a092c3b4180812ff7bdbc11798a7887d3">classifier</a>
-</li>
-<li>calculatePrototype()
-: <a class="el" href="classclassifier.html#aba60528cc6adba7f958fd66c10bdf283">classifier</a>
-</li>
-<li>classify()
-: <a class="el" href="classclassifier.html#aad38411bfb882cf9a47939506c087587">classifier</a>
-</li>
-<li>euclidiandistance()
-: <a class="el" href="classclassifier.html#a5e9342fc9cb67666db29a8e4de170bde">classifier</a>
-</li>
-<li>manhattandistance()
-: <a class="el" href="classclassifier.html#a690d06ebe686a8f05540d54904c7cd35">classifier</a>
-</li>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:aa31ca5025d5adf3c49ff46e543b5802f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classdatapoint.html#aa31ca5025d5adf3c49ff46e543b5802f">__construct</a> ($attributes)</td></tr>
+<tr class="separator:aa31ca5025d5adf3c49ff46e543b5802f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:a2db06b5d7ea39cc0e66d5485029c59aa"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a2db06b5d7ea39cc0e66d5485029c59aa"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$attributelist</b> = array()</td></tr>
+<tr class="separator:a2db06b5d7ea39cc0e66d5485029c59aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a252ba022809910ea710a068fc1bab657"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a252ba022809910ea710a068fc1bab657"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$class</b></td></tr>
+<tr class="separator:a252ba022809910ea710a068fc1bab657"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Knn Prototype A simple, smart and fast classifier written in PHP. </p>
+<dl class="section author"><dt>Author</dt><dd>Frank Houweling <a href="#" onclick="location.href='mai'+'lto:'+'hou'+'we'+'lin'+'g.'+'fra'+'nk'+'@gm'+'ai'+'l.c'+'om'; return false;">houwe<span style="display: none;">.nosp@m.</span>ling<span style="display: none;">.nosp@m.</span>.fran<span style="display: none;">.nosp@m.</span>k@gm<span style="display: none;">.nosp@m.</span>ail.c<span style="display: none;">.nosp@m.</span>om</a> </dd></dl>
+<dl class="section version"><dt>Version</dt><dd>1.1b</dd></dl>
+<p>Known issues: Only supports two attributes: x and y, multiple attributes can be added in the future.</p>
+<p>Class datapoint General datapoint class. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a class="anchor" id="aa31ca5025d5adf3c49ff46e543b5802f"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">__construct </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$attributes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Constructor for a new datapoint </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">int</td><td class="paramname">$attributes</td><td>The attributes of a datapoint. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>knnprototype.php</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Dec 23 2012 12:03:18 for Knn Prototype by
+    <li class="navelem"><a class="el" href="classdatapoint.html">datapoint</a></li>
+    <li class="footer">Generated on Mon Jun 10 2013 11:48:18 for Knn Prototype by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

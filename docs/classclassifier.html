@@ -101,7 +101,8 @@ $(document).ready(function(){initNavTree('classclassifier.html','');});
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a>  </div>
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
 <div class="title">classifier Class Reference</div>  </div>
 </div><!--header-->
@@ -109,8 +110,6 @@ $(document).ready(function(){initNavTree('classclassifier.html','');});
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3f111da4bc40db4532693fb7e943078d"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a3f111da4bc40db4532693fb7e943078d">addPoint</a> ($class, $attributes)</td></tr>
-<tr class="separator:a3f111da4bc40db4532693fb7e943078d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aad38411bfb882cf9a47939506c087587"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#aad38411bfb882cf9a47939506c087587">classify</a> ($attributes, $measure=&quot;manhattan&quot;)</td></tr>
 <tr class="separator:aad38411bfb882cf9a47939506c087587"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a690d06ebe686a8f05540d54904c7cd35"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a690d06ebe686a8f05540d54904c7cd35">manhattandistance</a> ($attributes)</td></tr>
@@ -121,44 +120,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aba60528cc6adba7f958fd66c10bdf283"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a092c3b4180812ff7bdbc11798a7887d3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifier.html#a092c3b4180812ff7bdbc11798a7887d3">array_avg</a> ($array)</td></tr>
 <tr class="separator:a092c3b4180812ff7bdbc11798a7887d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea7303cb68b2061ce4e185999cf747ba"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="aea7303cb68b2061ce4e185999cf747ba"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>addClassifyClass</b> ($name)</td></tr>
+<tr class="separator:aea7303cb68b2061ce4e185999cf747ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:af8fbe8a229e6a48421744cd18e2d5d21"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="af8fbe8a229e6a48421744cd18e2d5d21"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$classifyableClasses</b> = array()</td></tr>
+<tr class="separator:af8fbe8a229e6a48421744cd18e2d5d21"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Class classifier A simple Knn prototype based classifier class. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a3f111da4bc40db4532693fb7e943078d"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">addPoint </td>
-          <td>(</td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$class</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>$attributes</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Add a new point to the trainingdata </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes for a datapoint. </td></tr>
-    <tr><td class="paramtype">int</td><td class="paramname">$class</td><td>The class value for the datapoint. </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
 <a class="anchor" id="a092c3b4180812ff7bdbc11798a7887d3"></a>
 <div class="memitem">
 <div class="memproto">
@@ -292,7 +266,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classclassifier.html">classifier</a></li>
-    <li class="footer">Generated on Sun Dec 23 2012 12:03:18 for Knn Prototype by
+    <li class="footer">Generated on Mon Jun 10 2013 11:48:18 for Knn Prototype by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>

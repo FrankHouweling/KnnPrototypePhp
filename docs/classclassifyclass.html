@@ -3,7 +3,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
-<title>Knn Prototype: Data Fields</title>
+<title>Knn Prototype: classifyclass Class Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -67,13 +67,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
     <ul class="tablist">
       <li><a href="annotated.html"><span>Data&#160;Structures</span></a></li>
       <li><a href="classes.html"><span>Data&#160;Structure&#160;Index</span></a></li>
-      <li class="current"><a href="functions.html"><span>Data&#160;Fields</span></a></li>
-    </ul>
-  </div>
-  <div id="navrow3" class="tabs2">
-    <ul class="tablist">
-      <li class="current"><a href="functions.html"><span>All</span></a></li>
-      <li><a href="functions_func.html"><span>Functions</span></a></li>
+      <li><a href="functions.html"><span>Data&#160;Fields</span></a></li>
     </ul>
   </div>
 </div><!-- top -->
@@ -88,7 +82,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('functions.html','');});
+$(document).ready(function(){initNavTree('classclassifyclass.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -105,36 +99,67 @@ $(document).ready(function(){initNavTree('functions.html','');});
 </iframe>
 </div>
 
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-attribs">Data Fields</a>  </div>
+  <div class="headertitle">
+<div class="title">classifyclass Class Reference</div>  </div>
+</div><!--header-->
 <div class="contents">
-<div class="textblock">Here is a list of all documented struct and union fields with links to the struct/union documentation for each field:</div><ul>
-<li>__construct()
-: <a class="el" href="classdatapoint.html#a6a43e9d2c004ce06f034ec525f494a8c">datapoint</a>
-</li>
-<li>addPoint()
-: <a class="el" href="classclassifier.html#a3f111da4bc40db4532693fb7e943078d">classifier</a>
-</li>
-<li>array_avg()
-: <a class="el" href="classclassifier.html#a092c3b4180812ff7bdbc11798a7887d3">classifier</a>
-</li>
-<li>calculatePrototype()
-: <a class="el" href="classclassifier.html#aba60528cc6adba7f958fd66c10bdf283">classifier</a>
-</li>
-<li>classify()
-: <a class="el" href="classclassifier.html#aad38411bfb882cf9a47939506c087587">classifier</a>
-</li>
-<li>euclidiandistance()
-: <a class="el" href="classclassifier.html#a5e9342fc9cb67666db29a8e4de170bde">classifier</a>
-</li>
-<li>manhattandistance()
-: <a class="el" href="classclassifier.html#a690d06ebe686a8f05540d54904c7cd35">classifier</a>
-</li>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a4717bbfc70a40a57ee741ed70766c309"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="a4717bbfc70a40a57ee741ed70766c309"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>__construct</b> ($name)</td></tr>
+<tr class="separator:a4717bbfc70a40a57ee741ed70766c309"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98965dbdc92f6c0d05285b3979597dce"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classclassifyclass.html#a98965dbdc92f6c0d05285b3979597dce">addPoint</a> ($attributes)</td></tr>
+<tr class="separator:a98965dbdc92f6c0d05285b3979597dce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
+Data Fields</h2></td></tr>
+<tr class="memitem:ab2fc40d43824ea3e1ce5d86dee0d763b"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ab2fc40d43824ea3e1ce5d86dee0d763b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$name</b></td></tr>
+<tr class="separator:ab2fc40d43824ea3e1ce5d86dee0d763b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae981eb5292db8beafe5be7eb72ace4e6"><td class="memItemLeft" align="right" valign="top"><a class="anchor" id="ae981eb5292db8beafe5be7eb72ace4e6"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>$pointlist</b> = array()</td></tr>
+<tr class="separator:ae981eb5292db8beafe5be7eb72ace4e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a98965dbdc92f6c0d05285b3979597dce"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">addPoint </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>$attributes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Add a new point to the trainingdata </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramtype">array</td><td class="paramname">$attributes</td><td>The attributes for a datapoint. </td></tr>
+    <tr><td class="paramtype">int</td><td class="paramname">$class</td><td>The class value for the datapoint. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>knnprototype.php</li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sun Dec 23 2012 12:03:18 for Knn Prototype by
+    <li class="navelem"><a class="el" href="classclassifyclass.html">classifyclass</a></li>
+    <li class="footer">Generated on Mon Jun 10 2013 11:48:18 for Knn Prototype by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.2 </li>
   </ul>
