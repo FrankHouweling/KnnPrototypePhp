@@ -22,32 +22,64 @@
 
 	class datapoint
 	{
-	
-		public $attributelist = array();
-		public $class;
+		public $attributelist = array(), $class;
 		
 		/**
 		*
 		*	Constructor for a new datapoint
 		*	@param int $attributes The attributes of a datapoint.
+		*
+		*/
+		
+		function __construct( $attributes ){
+			foreach( $attributes as $nm => $vl )
+				$this->attributelist[ $nm ]	=	$vl;
+		}
+	}
+	
+	class attributevalue
+	{
+		public $attributeclass, $val;
+		
+		function __construct( attributeclass $attributeclass, $val ){
+			$this->attributeclass = $attributeclass;
+			$this->val = $val;
+		}
+	}
+	
+	class attributeclass
+	{
+		public $name, $weight, $pointlist = array();
+		
+		function __construct( $name, $weight )
+		{
+			$this->name   = $name;
+			$this->weight = $weight;
+		}
+		
+	}
+	
+	class classifyclass
+	{
+		public $name, $pointlist = array();
+		
+		function __construct( $name )
+		{
+			$this->name = $name;
+		}
+		
+		/**
+		*
+		*	Add a new point to the trainingdata
+		*	@param array $attributes The attributes for a datapoint.
 		*	@param int $class The class value for the datapoint.
 		*
 		*/
 		
-		function __construct( $class, $attributes )
+		function addPoint( $attributes )
 		{
-			
-			$this->class 	=	$class;
-			
-			foreach( $attributes as $nm => $vl )
-			{
-				
-				$this->attributelist[ $nm ]	=	$vl;	
-				
-			}
-		
+			$this->pointlist[] = new datapoint( $attributes );
 		}
-		
 	}
 	
 	/**
@@ -59,29 +91,10 @@
 	
 	class classifier
 	{
+		private $prototype, $classifyableClasses = array();
 		
-		private $pointlist	=	array();
-		private $prototype;
-		
-		function __construct()
-		{
-			
-			
-			
-		}
-		
-		/**
-		*
-		*	Add a new point to the trainingdata
-		*	@param array $attributes The attributes for a datapoint.
-		*	@param int $class The class value for the datapoint.
-		*
-		*/
-		
-		function addPoint( $class, $attributes )
-		{
-			
-			$this->pointlist[ $class ][]	=	new datapoint( $class, $attributes );
+		function __construct(){
+			// Empty constructor	
 		}
 		
 		/**
@@ -94,43 +107,30 @@
 		*
 		*/
 		
-		function classify( $attributes, $measure = "manhattan" )
-		{
-			
+		function classify( $attributes, $measure = "manhattan" ){
 			// First calculate the prototype value..
-			
-			$this->calculatePrototype();
+			if( empty($this->prototype) )
+				$this->calculatePrototype();
 			
 			// Now we seek the  distance between the prototypes and the new point
 			
 			switch( $measure )
 			{
-				
-				case 'manhattan':
-				
+				case 'manhattan':	
 					$distance = $this->manhattandistance( $attributes );
-				
 				break;
-				
 				case 'euclidian':
-				
 					$distance = $this->euclidiandistance( $attributes );
-				
 				break;
-				
 				default:
-				
 					$distance = $this->manhattandistance( $attributes );
-					
 				break;
-				
 			}
 			
 			asort( $distance );
 			reset( $distance );
 			
 			return key( $distance );
-			
 		}
 		
 		/**
@@ -143,27 +143,17 @@
 		*
 		*/
 		
-		function manhattandistance( $attributes )
-		{
-			
+		function manhattandistance( $attributes ){
 			$distance	=	array();
 			
 			foreach( $this->prototype as $name => $prototype )
 			{
-			
-				$distance[$name]	=	0;
-				
+				$distance[$name]	=	0;	
 				foreach( $prototype as $atnm => $attr )
-				{
-					
 					$distance[$name]	=	$distance[$name] + abs( $attr - $attributes[ $atnm ] );
-					
-				}
-				
 			}
 			
 			return $distance;
-			
 		}
 		
 		/**
@@ -176,29 +166,27 @@
 		*
 		*/
 		
-		function euclidiandistance( $attributes )
-		{
-			
+		function euclidiandistance( $attributes ){
 			$distance	=	array();
-			
-			foreach( $this->prototype as $name => $prototype )
+
+			foreach( $attributes as $attribute )
 			{
-			
-				$distance[$name]	=	0;
-				
-				foreach( $prototype as $atnm => $attr )
+				$attr = $attribute->val;
+				$atnm = $attribute->attributeclass->name;
+				foreach( $this->prototype as $classname => $prototype )
 				{
-					
-					$distance[$name]	=	$distance[$name] + pow(abs( $attr - $attributes[ $atnm ] ));
-					
+					foreach( $prototype as $attributename => $attributevalue )
+					{
+						if( $attributename == $atnm )
+						{
+							$distance[$classname]	=	$distance[$classname] + ( 
+								pow( ( abs( $attr - $attributevalue ) * $attribute->attributeclass->weight ) , 2 ) );
+						}
+					}
 				}
-				
-				$distance[$name]	=	sqrt( $distance[$name] );
-				
 			}
 			
 			return $distance;
-			
 		}
 		
 		/**
@@ -209,39 +197,25 @@
 		*
 		*/
 		
-		function calculatePrototype()
-		{
-			
+		function calculatePrototype(){
 			$prototype	=	array();
 			
-			foreach( $this->pointlist as $classname => $classvalues )
-			{
-			
+			foreach( $this->classifyableClasses as $class )
+			{	
+				$classname = $class->name;
 				$values	=	array();
 				
-				foreach( $classvalues as $instance )
+				foreach( $class->pointlist as $datapoint )
 				{
-					
-					foreach( $instance->attributelist as $attributename => $attributevalue )
-					{
-						
-						$values[ $attributename ][]	=	$attributevalue;
-						
-					}
-					
+					foreach( $datapoint->attributelist as $attrval )
+						$values[ $attrval->attributeclass->name ][]	=	$attrval->val;
 				}
 				
 				foreach( $values as $attributename => $val )
-				{
-					
 					$prototype[$classname][$attributename]	= $this->array_avg($val);
-					
-				}
-				
 			}
 			
 			$this->prototype	=	$prototype;
-			
 		}
 		
 		/**
@@ -256,19 +230,21 @@
 		
 		function array_avg( $array )
 		{
-			
 			$count	=	count( $array );
 			$total	=	0;
 			
 			foreach( $array as $value )
-			{
-				
 				$total	=	$total + $value;
-				
-			}
 			
 			return ( $total/$count );
+		}
+		
+		function addClassifyClass( $name )
+		{
+			$class = new classifyclass( $name );
+			$this->classifyableClasses[] = $class;
 			
+			return $class;
 		}
 		
 	}
@@ -277,10 +253,19 @@
 	
 	$classifier	=	new classifier();
 	
-	$classifier->addPoint( "+", array( "x" => 10, "y" => 15, "m" => 2 ) );
-	$classifier->addPoint( "v", array( "x" => 11, "y" => 12, "m" => 1000 ) );
-	$classifier->addPoint( "-", array( "x" => 3, "y" => 6, "m" => 10 ) );
+	$x 		= new attributeclass( "x", 0.1 );
+	$y 		= new attributeclass( "y", 0.1 );
+	$m 		= new attributeclass( "m", 1 );
 	
-	echo $classifier->classify( array( "x" => 11, "y" => 12, "m" => 700 ) );
+	$class1	= $classifier->addClassifyClass("+");
+	$class2 = $classifier->addClassifyClass("v");
+	$class3 = $classifier->addClassifyClass("-"); 
+	
+	$class1->addPoint( array( new attributevalue($x, 10),  new attributevalue($y, 15),  new attributevalue($m, 2) ) );
+	$class1->addPoint( array( new attributevalue($x, 20),  new attributevalue($y, 30),  new attributevalue($m, 4) ) );
+	$class2->addPoint( array(  new attributevalue($x, 11),  new attributevalue($y, 12),  new attributevalue($m, 1000) ) );
+	$class3->addPoint( array( new attributevalue($x, 3), new attributevalue($y, 6), new attributevalue($m, 10) ) );
+	
+	echo $classifier->classify( array(  new attributevalue($x, 3),  new attributevalue($y, 6),  new attributevalue($m, 1000) ), "euclidian" );
 
 ?>
